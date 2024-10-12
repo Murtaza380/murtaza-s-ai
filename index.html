@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murtaza's AI Music Creation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Murtaza's AI Music Creation</h1>
+        <nav>
+            <ul>
+                <li><a href="#ai-song-creation">AI Song Creation</a></li>
+                <li><a href="#remixing">Remixing</a></li>
+                <li><a href="#voice-cloning">Voice Cloning</a></li>
+                <li><a href="#singers">Singers</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="ai-song-creation">
+            <h2>Create Your Own Song</h2>
+            <p>Generate songs using lyrics and styles.</p>
+            <form id="lyrics-style-form">
+                <textarea placeholder="Enter your lyrics here..." required></textarea>
+                <input type="text" placeholder="Enter music style (e.g., Romantic, Pop)" required />
+                <button type="submit">Create Song</button>
+            </form>
+            <div id="song-output"></div>
+        </section>
+
+        <section id="remixing">
+            <h2>Remix Your Favorite Tracks</h2>
+            <p>Upload your audio tracks and remix them.</p>
+            <input type="file" id="music-upload" accept="audio/*" required />
+            <button onclick="startRecording()">Start Recording</button>
+            <button onclick="stopRecording()">Stop Recording</button>
+            <div id="remix-output"></div>
+        </section>
+
+        <section id="voice-cloning">
+            <h2>Clone Your Voice</h2>
+            <p>Upload your audio file or record your voice.</p>
+            <div>
+                <h3>Upload Your Audio</h3>
+                <input type="file" id="audio-upload" accept="audio/*" />
+                <button onclick="uploadAudio()">Upload Audio</button>
+            </div>
+            <div>
+                <h3>Record Your Audio</h3>
+                <button onclick="startVoiceRecording()">Start Recording</button>
+                <button onclick="stopVoiceRecording()">Stop Recording</button>
+            </div>
+            <div id="voice-output"></div>
+        </section>
+
+        <section id="singers">
+            <h2>Singers and Their Genres</h2>
+            <p>Click on a singer to create a song in their voice.</p>
+            <div id="singer-list">
+                <div onclick="createSongWithSinger('Arijit Singh')">
+                    <h3>Arijit Singh</h3>
+                    <p>Genres: Bollywood, Romantic</p>
+                    <p>Styles: Soulful, Melodic</p>
+                </div>
+                <div onclick="createSongWithSinger('Atif Aslam')">
+                    <h3>Atif Aslam</h3>
+                    <p>Genres: Bollywood, Pop</p>
+                    <p>Styles: Soft Rock, Romantic</p>
+                </div>
+                <div onclick="createSongWithSinger('Neha Kakkar')">
+                    <h3>Neha Kakkar</h3>
+                    <p>Genres: Bollywood, Pop</p>
+                    <p>Styles: Dance, Fun</p>
+                </div>
+                <div onclick="createSongWithSinger('Ustad Nusrat Fateh Ali Khan')">
+                    <h3>Ustad Nusrat Fateh Ali Khan</h3>
+                    <p>Genres: Qawwali, Sufi</p>
+                    <p>Styles: Devotional, Soulful</p>
+                </div>
+                <div onclick="createSongWithSinger('Sonu Nigam')">
+                    <h3>Sonu Nigam</h3>
+                    <p>Genres: Bollywood, Classical</p>
+                    <p>Styles: Versatile, Melodic</p>
+                </div>
+                <div onclick="createSongWithSinger('KK')">
+                    <h3>Krishnakumar Kunnath (KK)</h3>
+                    <p>Genres: Bollywood, Pop</p>
+                    <p>Styles: Soulful, Romantic</p>
+                </div>
+                <div onclick="createSongWithSinger('Badshah')">
+                    <h3>Badshah</h3>
+                    <p>Genres: Hip Hop, Punjabi</p>
+                    <p>Styles: Party, Dance</p>
+                </div>
+                <div onclick="createSongWithSinger('Yo Yo Honey Singh')">
+                    <h3>Yo Yo Honey Singh</h3>
+                    <p>Genres: Punjabi, Bollywood</p>
+                    <p>Styles: Rap, Dance</p>
+                </div>
+                <div onclick="createSongWithSinger('Asha Bhosle')">
+                    <h3>Asha Bhosle</h3>
+                    <p>Genres: Bollywood, Classical</p>
+                    <p>Styles: Versatile, Romantic</p>
+                </div>
+                <div onclick="createSongWithSinger('Alka Yagnik')">
+                    <h3>Alka Yagnik</h3>
+                    <p>Genres: Bollywood, Classical</p>
+                    <p>Styles: Romantic, Devotional</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="login">
+            <h2>Login</h2>
+            <form id="login-form" onsubmit="return handleLogin(event)">
+                <input type="email" id="email" placeholder="Enter your email" required />
+                <button type="submit">Login</button>
+            </form>
+            <div id="login-message"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Murtaza's AI Music Creation</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
